@@ -35,11 +35,11 @@ export const Init: React.FC<PlayProps> = ({ start, setStart }) => {
 					navigate('/home');
 				}}
 				sx={{
-					width: '80%',
 					background: 'transparent',
-					border: 'none',
+					border: '1px solid #ff007b',
 					color: '#ff007b',
 					fontSize: '30px',
+					padding: '0 30px',
 				}}
 			>
 				Vamos lá!
