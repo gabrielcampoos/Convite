@@ -1,0 +1,62 @@
+.txt-animado {
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.txt-animado span {
+    position: relative;
+}
+
+.txt-animado span::before {
+    content: '';
+    color: #ff007b;
+    animation: palavras 20s infinite;
+}
+
+.txt-animado span::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid #ff007b;
+    right: -10px;
+    animation: cursor 0.8s infinite, digita 20s steps(15) infinite;
+    width: calc(100% + 18px);
+    background-color: #000;
+}
+
+
+@keyframes digita {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 18px);
+    }
+}
+
+@keyframes cursor {
+    0% {
+        border-left: 2px solid #000;
+    }
+}
+
+@keyframes palavras {
+    0%, 20% {
+        content: 'Oi The, tudo bem com você? Espero que sim!';
+    }
+    21%, 40% {
+        content: 'Eu gostaria de te fazer um convite... Espero que você aceite, é bem legal!';
+    }
+    41%, 60% {
+        content: 'Nesta noite de quinta-feira(14/12)';
+    }
+    61%, 80% {
+        content: 'Tem o pico da chuva de meteoros geminídeas.'
+    }
+    81%, 100% {
+        content: 'Eu adoraria te levar para ver e comer algo... E claro, tomar uma cerveja.'
+    }
+    
+    
+}
+
