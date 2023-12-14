@@ -13,7 +13,10 @@ const AppRoutes: React.FC = () => {
 					path="/"
 					element={<Init start={start} setStart={setStart} />}
 				/>
-				<Route path="/home" element={<Home />} />
+				<Route
+					path="/home"
+					element={<Home start={start} setStart={setStart} />}
+				/>
 				<Route path="/confirm" element={<Confirm />} />
 			</Routes>
 		</BrowserRouter>
