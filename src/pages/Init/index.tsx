@@ -10,8 +10,11 @@ interface PlayProps {
 export const Init: React.FC<PlayProps> = ({ start, setStart }) => {
 	const navigate = useNavigate();
 
-	function handleStart() {
-		setStart(document.getElementById('player').play());
+	function play() {
+		const play: HTMLMediaElement = document.getElementById(
+			'play',
+		) as HTMLMediaElement;
+		play.play();
 	}
 
 	return (
@@ -28,7 +31,7 @@ export const Init: React.FC<PlayProps> = ({ start, setStart }) => {
 			<Typography
 				component="button"
 				onClick={() => {
-					handleStart;
+					play;
 					navigate('/home');
 				}}
 				sx={{

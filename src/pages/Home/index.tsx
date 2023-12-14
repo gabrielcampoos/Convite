@@ -11,7 +11,11 @@ interface PlayProps {
 
 export const Home: React.FC<PlayProps> = ({ start, setStart }) => {
 	function handleStart() {
-		setStart(document.getElementById('player').play());
+		// setStart(document.getElementById('player').play() as HTMLMediaElement);
+		const play: HTMLMediaElement = document.getElementById(
+			'play',
+		) as HTMLMediaElement;
+		play.play();
 	}
 	const navigate = useNavigate();
 
