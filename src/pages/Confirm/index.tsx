@@ -1,6 +1,10 @@
 import { Box, Button, Container, Typography } from '@mui/material';
+import { useState } from 'react';
+import { Init } from '../Init';
 
 export const Confirm = () => {
+	const [start, setStart] = useState(true);
+
 	function handleCancel() {
 		alert('Resposta errada!');
 	}
@@ -58,6 +62,9 @@ export const Confirm = () => {
 					>
 						Não, Gabriel
 					</Button>
+				</Box>
+				<Box zIndex={-1} position={'absolute'}>
+					<Init start={start} setStart={setStart} />
 				</Box>
 			</Container>
 		</Box>

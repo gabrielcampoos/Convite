@@ -1,8 +1,18 @@
 import { Box, Typography } from '@mui/material';
+import React, { Dispatch, SetStateAction } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Init } from '../Init';
 import './styles.css';
 
-export const Home = () => {
+interface PlayProps {
+	start: boolean;
+	setStart: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Home: React.FC<PlayProps> = ({ start, setStart }) => {
+	function handleStart() {
+		setStart(document.getElementById('player').play());
+	}
 	const navigate = useNavigate();
 
 	return (
@@ -38,10 +48,16 @@ export const Home = () => {
 						cursor: 'pointer',
 						fontSize: '17px',
 					}}
-					onClick={() => navigate('/confirm')}
+					onClick={() => {
+						handleStart;
+						navigate('/confirm');
+					}}
 				>
 					Continuar
 				</Typography>
+			</Box>
+			<Box zIndex={-1} position={'absolute'}>
+				<Init start={start} setStart={setStart} />
 			</Box>
 		</Box>
 	);
